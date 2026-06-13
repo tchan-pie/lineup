@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="GET" action="/">
+  <label>Style:
+    <select name="style">
+      <option value="">All</option>
+      {% for s in styles %}
+        <option value="{{ s }}" {% if filters.style == s %}selected{% endif %}>{{ s }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Level:
+    <select name="level">
+      <option value="">All</option>
+      {% for l in ['Beginner', 'Intermediate', 'Advanced', 'All Levels'] %}
+        <option value="{{ l }}" {% if filters.level == l %}selected{% endif %}>{{ l }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Day:
+    <select name="day">
+      <option value="">All</option>
+      {% for d in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'] %}
+        <option value="{{ d }}" {% if filters.day == d %}selected{% endif %}>{{ d }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Max Price:
+    <input type="number" name="max_price" value="{{ filters.max_price }}" placeholder="$">
+  </label>
+
+  <button type="submit">Filter</button>
+  <a href="/">Clear</a>
+</form>
+
+<p>{{ total }} class{{ 'es' if total != 1 }} found</p>
+
+{% for c in classes %}
+  <div class="card">
+    <h3>{{ c.class_name }}</h3>
+    <p><strong>{{ c.style }}</strong> &middot; {{ c.skill_level }}</p>
+    <p>{{ c.studio_name }} — {{ c.studio_address }}</p>
+    <p>{{ c.day_of_week }} at {{ c.time }}</p>
+    {% if c.instructor %}<p>with {{ c.instructor }}</p>{% endif %}
+    {% if c.price %}<p>${{ "%.0f"|format(c.price) }}</p>{% else %}<p>Free</p>{% endif %}
+    {% if c.description %}<p>{{ c.description }}</p>{% endif %}
+    {% if c.is_recurring %}<p><em>Weekly class</em></p>{% endif %}
+  </div>
+{% endfor %}
+
+{% endblock %}

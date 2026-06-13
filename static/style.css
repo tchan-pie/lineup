@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Outfit', Arial, sans-serif;
+  background: #f4f1ec;
+  color: #3a3a3a;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #e8e2d8;
+  color: #3a3a3a;
+  padding: 2rem 2rem;
+  border-bottom: 1px solid #d6cfc2;
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 2.2rem;
+}
+
+header p {
+  margin: 0.4rem 0 0;
+  color: #8a8275;
+  font-weight: 300;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+form {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid #e6e1d8;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6b6458;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+form select, form input {
+  margin-top: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #ddd6c9;
+  border-radius: 6px;
+  background: #faf8f4;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  color: #3a3a3a;
+}
+
+button {
+  background: #3a3a3a;
+  color: #f4f1ec;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Outfit',

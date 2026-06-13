@@ -1,0 +1,7 @@
+I used AI for the following:
+-to help me setup the Flask strucure
+-to help me figure out how to write the base and index html files
+-debug and rewrite confusing parts of code
+-better explain concepts I did not understand like SQLalchemy and Jinja templates
+-explain how the filter logic works on the browse page
+
